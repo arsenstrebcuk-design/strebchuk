@@ -1,0 +1,85 @@
+﻿@page "/history"
+@using DataConverterApp.Services
+@inject HistoryService historyService
+
+<h3>Історія конвертацій</h3>
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-info">
+        @message
+    </div>
+}
+
+<div class="mb-3 d-flex gap-2">
+    <input class="form-control"
+           style="max-width: 300px;"
+           placeholder="Пошук по файлу або формату..."
+           @bind="searchText" />
+
+    <button class="btn btn-danger" @onclick="ClearHistory">
+        Очистити історію
+    </button>
+</div>
+
+@if (FilteredItems.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Файл</th>
+                <th>Формат</th>
+                <th>Рядки</th>
+                <th>Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in FilteredItems)
+            {
+                <tr>
+                    <td>@item.FileName</td>
+                    <td>
+                        @if (item.Format == "JSON")
+                        {
+                            <span>🟦 JSON</span>
+                        }
+                        else if (item.Format == "XML")
+                        {
+                            <span>🟧 XML</span>
+                        }
+                        else
+                        {
+                            <span>@item.Format</span>
+                        }
+                    </td>
+                    <td>@item.Rows</td>
+                    <td>@item.Date.ToString("dd.MM.yyyy HH:mm")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Історія порожня.</p>
+}
+
+@code {
+    private string searchText = "";
+
+    private IEnumerable<HistoryItem> FilteredItems =>
+        historyService.Items.Where(x =>
+            string.IsNullOrWhiteSpace(searchText) ||
+            x.FileName.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
+            x.Format.Contains(searchText, StringComparison.OrdinalIgnoreCase));
+
+    private async Task ClearHistory()
+    {
+        historyService.Clear();
+        message = "Історію очищено";
+
+        await Task.Delay(3000);
+        message = "";
+    }
+    private string message = "";
+
+}

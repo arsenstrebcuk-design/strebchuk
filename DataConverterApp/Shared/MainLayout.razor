@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>DataConverterApp</PageTitle>
+
+<div class="page @(isDark ? "dark-theme" : "light-theme")">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+
+            <button class="btn btn-sm btn-outline-secondary ms-2"
+                    @onclick="ToggleTheme">
+                @(isDark ? " Light" : " Dark")
+            </button>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+@code {
+    private bool isDark = false;
+
+    private void ToggleTheme()
+    {
+        isDark = !isDark;
+    }
+}

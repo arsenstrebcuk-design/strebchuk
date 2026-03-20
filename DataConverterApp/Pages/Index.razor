@@ -1,0 +1,492 @@
+﻿@page "/"
+@using DataConverterApp.Interfaces
+@using DataConverterApp.Models
+@using DataConverterApp.Services
+@using System.Collections.Generic
+@inject ConversionService conversionService
+@inject HistoryService historyService
+@inject IJSRuntime JS
+
+<div class="container py-4">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">Data Converter </h1>
+        <p class="text-muted">Редагуйте CSV та конвертуйте у JSON/XML</p>
+    </div>
+
+    <div style="height: 60px;">
+        @if (!string.IsNullOrEmpty(statusMessage))
+        {
+            <div class="alert @statusClass alert-dismissible fade show shadow-sm border-0 animate__animated animate__fadeInDown" role="alert">
+                @statusMessage
+                <button type="button" class="btn-close" @onclick="() => statusMessage = null"></button>
+            </div>
+        }
+    </div>
+
+    <div class="row g-4 mt-2">
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 rounded-4">
+                <div class="card-body p-4">
+                    <h6 class="text-uppercase text-primary fw-bold mb-3 small">1. Завантаження</h6>
+                    <InputFile OnChange="HandleFileSelection" class="form-control form-control-sm shadow-none" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 rounded-4">
+                <div class="card-body p-4 text-center">
+                    <h6 class="text-uppercase text-success fw-bold mb-3 small">2. Формат</h6>
+                    <div class="d-flex gap-2">
+                        <select @bind="selectedFormat" class="form-select form-select-sm shadow-none">
+                            <option value="JSON">JSON</option>
+                            <option value="XML">XML</option>
+                        </select>
+                        <button class="btn btn-success btn-sm px-4 fw-bold @(data == null ? "disabled" : "")" @onclick="ConvertData">
+                            КОНВЕРТУВАТИ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100 rounded-4">
+                <div class="card-body p-4">
+                    <h6 class="text-uppercase text-secondary fw-bold mb-3 small">3. Експорт</h6>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-primary btn-sm w-100 @(string.IsNullOrEmpty(convertedResult) ? "disabled" : "")" @onclick="CopyToClipboard">Копіювати</button>
+                        <button class="btn btn-outline-secondary btn-sm w-100 @(string.IsNullOrEmpty(convertedResult) ? "disabled" : "")" @onclick="DownloadFile">Скачати</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (data != null && data.Any())
+    {
+        <div class="card mt-5 shadow-sm border-0 rounded-4 overflow-hidden">
+            <div class="card-header editor-header border-bottom py-3 px-4 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 fw-bold text-dark">Редактор таблиці</h6>
+               
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-sm btn-primary px-3" @onclick="AddRow">+ Додати рядок</button>
+                        <button class="btn btn-sm btn-success px-3" @onclick="AddColumn">+ Додати стовпець</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive" style="max-height: 400px;">
+            <table class="table table-hover align-middle mb-0 editor-table">
+                <thead class="table-light sticky-top editor-thead">
+                    <tr>
+                        <th class="px-3 text-center" style="width: 50px;">#</th>
+
+                        @foreach (var key in data.First().Keys)
+                        {
+                            var currentKey = key;
+
+                            <th class="px-3 py-3 small text-uppercase">
+                                <div class="d-flex align-items-center gap-2">
+                                    <input class="form-control form-control-sm"
+                                           value="@currentKey"
+                                           @onchange="(e) => RenameColumn(currentKey, e.Value?.ToString())" />
+
+                                    <button class="btn btn-sm btn-outline-danger border-0"
+                                            title="Видалити стовпець"
+                                            @onclick="() => RemoveColumn(currentKey)">
+                                        ✖
+                                    </button>
+                                </div>
+                            </th>
+                        }
+
+                        <th class="px-3 text-center" style="width: 50px;">Дія</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @for (int i = 0; i < data.Count; i++)
+                    {
+                        var rowIndex = i;
+                        var row = data[i];
+
+                        <tr>
+                            <td class="text-center text-muted small">@(i + 1)</td>
+
+                            @foreach (var key in row.Keys.ToList())
+                            {
+                                var currentKey = key;
+
+                                <td class="px-2">
+                                    <input class="form-control form-control-sm border-0 bg-light-hover editor-cell-input"
+                                           @bind="row[currentKey]" />
+                                </td>
+                            }
+
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-danger border-0"
+                                        @onclick="() => RemoveRow(rowIndex)">
+                                    🗑
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            </div>
+    }
+
+    @if (!string.IsNullOrEmpty(convertedResult))
+    {
+        <div class="mt-5 mb-5 animate__animated animate__fadeIn">
+            <h6 class="fw-bold text-muted mb-3">Результат (@displayFormat):</h6>
+            <div class="code-wrapper shadow-lg rounded-4">
+                <div class="code-top-bar d-flex justify-content-between px-4 py-2 border-bottom border-secondary">
+                    <span class="text-white-50 small">output.@displayFormat.ToLower()</span>
+                    <span class="badge bg-primary">READY</span>
+                </div>
+                <pre class="p-4 m-0 code-content">@convertedResult</pre>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    <style >
+    body {
+        background-color: #fcfcfc;
+    }
+
+    .bg-light-hover:focus {
+        background-color: #fff !important;
+        border: 1px solid #0d6efd !important;
+        box-shadow: none;
+    }
+    .code-wrapper {
+        background-color: #1e1e1e;
+        overflow: hidden;
+    }
+    .code-top-bar {
+        background-color: #252526;
+    }
+    .code-content {
+        color: #dcdcdc;
+        font-family: 'Consolas', monospace;
+        font-size: 14px;
+        max-height: 500px;
+        overflow: auto;
+    }
+    .dark-theme .top-row {
+        background-color: #161616 !important;
+        border-bottom: 1px solid #2f2f2f !important;
+    }
+
+        .dark-theme .top-row a {
+            color: #e5e5e5 !important;
+        }
+
+        .dark-theme .top-row .btn,
+        .dark-theme .top-row button {
+            background-color: #262626 !important;
+            color: #f1f1f1 !important;
+            border: 1px solid #4a4a4a !important;
+        }
+
+            .dark-theme .top-row .btn:hover,
+            .dark-theme .top-row button:hover {
+                background-color: #333 !important;
+            }
+
+    .dark-theme .card {
+        background-color: #1f1f1f !important;
+        color: #f1f1f1 !important;
+        border: 1px solid #343434 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,.25) !important;
+    }
+
+    .dark-theme .card-body {
+        background-color: #1f1f1f !important;
+        color: #f1f1f1 !important;
+    }
+
+    .dark-theme .card-header {
+        background-color: #262626 !important;
+        color: #f1f1f1 !important;
+        border-bottom: 1px solid #3a3a3a !important;
+    }
+
+    .dark-theme .bg-white {
+        background-color: #262626 !important;
+    }
+
+    .dark-theme .table {
+        color: #f1f1f1 !important;
+    }
+
+        .dark-theme .table thead th,
+        .dark-theme .table-light th {
+            background-color: #242424 !important;
+            color: #f1f1f1 !important;
+            border-color: #3a3a3a !important;
+        }
+
+        .dark-theme .table td,
+        .dark-theme .table th {
+            border-color: #343434 !important;
+        }
+
+        .dark-theme .table tbody tr {
+            background-color: #1b1b1b !important;
+        }
+
+            .dark-theme .table tbody tr:nth-child(even) {
+                background-color: #202020 !important;
+            }
+
+    .dark-theme .form-control,
+    .dark-theme .form-select,
+    .dark-theme input,
+    .dark-theme select,
+    .dark-theme textarea {
+        background-color: #2a2a2a !important;
+        color: #ffffff !important;
+        border: 1px solid #4a4a4a !important;
+    }
+
+        .dark-theme .form-control::placeholder,
+        .dark-theme input::placeholder,
+        .dark-theme textarea::placeholder {
+            color: #a8a8a8 !important;
+        }
+
+        .dark-theme .form-control:focus,
+        .dark-theme .form-select:focus,
+        .dark-theme input:focus,
+        .dark-theme select:focus,
+        .dark-theme textarea:focus {
+            background-color: #2f2f2f !important;
+            color: #ffffff !important;
+            border-color: #6a6a6a !important;
+            box-shadow: 0 0 0 0.1rem rgba(120,120,120,.2) !important;
+        }
+
+    .dark-theme .text-muted {
+        color: #b5b5b5 !important;
+    }
+
+    .dark-theme .text-dark {
+        color: #f1f1f1 !important;
+    }
+
+    .dark-theme .table-responsive {
+        background-color: #1b1b1b !important;
+    }
+
+    .dark-theme .btn-outline-primary {
+        color: #76a9ff !important;
+        border-color: #76a9ff !important;
+    }
+
+        .dark-theme .btn-outline-primary:hover {
+            background-color: #0d6efd !important;
+            color: #fff !important;
+        }
+
+    .dark-theme .btn-outline-secondary {
+        color: #d7d7d7 !important;
+        border-color: #7a7a7a !important;
+    }
+
+        .dark-theme .btn-outline-secondary:hover {
+            background-color: #555 !important;
+            color: #fff !important;
+        }
+
+    .dark-theme .btn-outline-danger {
+        color: #ff8a8a !important;
+        border-color: #a94444 !important;
+    }
+
+        .dark-theme .btn-outline-danger:hover {
+            background-color: #842029 !important;
+            color: #fff !important;
+        }
+
+    .dark-theme .alert-info {
+        background-color: #1f4257 !important;
+        color: #dff4ff !important;
+        border: 1px solid #2d5d79 !important;
+    }
+
+    .dark-theme .alert-success {
+        background-color: #1f5a3d !important;
+        color: #e8fff2 !important;
+        border: 1px solid #2e7a54 !important;
+    }
+
+    .dark-theme .alert-danger {
+        background-color: #5c1f1f !important;
+        color: #ffe9e9 !important;
+        border: 1px solid #8b3434 !important;
+    }
+
+    .dark-theme .badge.bg-primary {
+        background-color: #0d6efd !important;
+    }
+
+    .dark-theme .code-wrapper {
+        background-color: #181818 !important;
+        border: 1px solid #303030 !important;
+    }
+
+    .dark-theme .code-top-bar {
+        background-color: #222 !important;
+    }
+
+    .dark-theme .code-content {
+        color: #dcdcdc !important;
+    }
+
+    .dark-theme .editor-header {
+        background-color: #262626 !important;
+        color: #f1f1f1 !important;
+    }
+
+    .dark-theme .editor-thead th {
+        background-color: #242424 !important;
+        color: #f1f1f1 !important;
+    }
+
+    .dark-theme .editor-cell-input {
+        background-color: #252525 !important;
+        color: #fff !important;
+    }
+        .dark-theme .editor-cell-input:focus {
+            background-color: #2d2d2d !important;
+            color: #fff !important;
+        }
+</style>    
+</style>
+@code {
+    private List<Dictionary<string, string>>? data;
+    private string selectedFormat = "JSON";
+    private string displayFormat = "";
+    private string convertedResult = "";
+    private string fileName = "";
+    private string? statusMessage;
+    private string statusClass = "alert-info";
+    private void RenameColumn(string oldName, string? newName)
+    {
+        if (data == null || string.IsNullOrWhiteSpace(oldName) || string.IsNullOrWhiteSpace(newName))
+            return;
+
+        newName = newName.Trim();
+
+        if (oldName == newName)
+            return;
+
+        if (data.Any(r => r.ContainsKey(newName)))
+            return;
+
+        foreach (var row in data)
+        {
+            if (!row.ContainsKey(oldName))
+                continue;
+
+            var value = row[oldName];
+            row.Remove(oldName);
+            row[newName] = value;
+        }
+    }
+    private void ClearCell(int rowIndex, string key)
+    {
+        if (data == null || rowIndex < 0 || rowIndex >= data.Count) return;
+
+        if (data[rowIndex].ContainsKey(key))
+            data[rowIndex][key] = "";
+    }
+    private void RemoveColumn(string columnName)
+    {
+        if (data == null) return;
+
+        foreach (var row in data)
+        {
+            if (row.ContainsKey(columnName))
+                row.Remove(columnName);
+        }
+    }
+    private void AddColumn()
+    {
+        if (data == null || !data.Any()) return;
+
+        string newColumn = $"Column{data.First().Count + 1}";
+
+        foreach (var row in data)
+        {
+            row[newColumn] = "";
+        }
+    }
+    private async Task HandleFileSelection(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            fileName = e.File.Name;
+            using var reader = new StreamReader(e.File.OpenReadStream());
+            string content = await reader.ReadToEndAsync();
+            data = CsvParser.Parse(content);
+            Notify("CSV успішно завантажено!", "alert-success");
+            convertedResult = "";
+        }
+        catch { Notify("Помилка завантаження", "alert-danger"); }
+    }
+
+    private void AddRow()
+    {
+        if (data == null || !data.Any()) return;
+        var newRow = new Dictionary<string, string>();
+        foreach (var key in data.First().Keys) newRow[key] = "";
+        data.Add(newRow);
+    }
+
+    private void RemoveRow(int index)
+    {
+        if (data != null && index >= 0 && index < data.Count)
+        {
+            data.RemoveAt(index);
+        }
+    }
+    private void ConvertData()
+    {
+        if (data == null) return;
+        try
+        {
+            IDataFormat format = selectedFormat == "JSON" ? new JsonFormat() : new XmlFormat();
+            convertedResult = format.Serialize(data);
+            displayFormat = selectedFormat;
+            historyService.Add(fileName, selectedFormat, data.Count);
+            Notify("Дані конвертовано!", "alert-success");
+        }
+        catch { Notify("Помилка конвертації", "alert-danger"); }
+    }
+
+    private async Task CopyToClipboard()
+    {
+        await JS.InvokeVoidAsync("navigator.clipboard.writeText", convertedResult);
+        Notify("Скопійовано!", "alert-primary");
+    }
+
+    private async Task DownloadFile()
+    {
+        await JS.InvokeVoidAsync("downloadFile", $"data.{displayFormat.ToLower()}", convertedResult);
+        Notify("Файл завантажується", "alert-info");
+    }
+
+    private void Notify(string msg, string clss)
+    {
+        statusMessage = msg;
+        statusClass = clss;
+        StateHasChanged();
+        Task.Delay(3000).ContinueWith(_ => { statusMessage = null; InvokeAsync(StateHasChanged); });
+    }
+
+}

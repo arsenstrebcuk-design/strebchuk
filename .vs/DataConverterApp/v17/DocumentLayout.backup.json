@@ -1,0 +1,222 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\pages\\history.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\pages\\history.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\models\\formatfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\models\\formatfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\interfaces\\idataformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\interfaces\\idataformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B241BF8-87EA-4E62-949A-983C57683A46}|TestProject2\\TestProject2.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\testproject2\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B241BF8-87EA-4E62-949A-983C57683A46}|TestProject2\\TestProject2.csproj|solutionrelative:testproject2\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\services\\conversionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\services\\conversionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\models\\jsonformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\models\\jsonformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\models\\xmlformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\models\\xmlformat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B241BF8-87EA-4E62-949A-983C57683A46}|TestProject2\\TestProject2.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\testproject2\\testproject2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6B241BF8-87EA-4E62-949A-983C57683A46}|TestProject2\\TestProject2.csproj|solutionrelative:testproject2\\testproject2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|c:\\users\\arsen\\onedrive\\\u0440\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u043D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\dataconverterapp\\services\\historyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3EFE62C6-6F37-4EFD-941F-4F5D8536AF81}|DataConverterApp\\DataConverterApp.csproj|solutionrelative:dataconverterapp\\services\\historyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "History.razor",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Pages\\History.razor",
+              "RelativeDocumentMoniker": "DataConverterApp\\Pages\\History.razor",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Pages\\History.razor",
+              "RelativeToolTip": "DataConverterApp\\Pages\\History.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T19:56:28.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TestProject2.csproj",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\TestProject2\\TestProject2.csproj",
+              "RelativeDocumentMoniker": "TestProject2\\TestProject2.csproj",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\TestProject2\\TestProject2.csproj",
+              "RelativeToolTip": "TestProject2\\TestProject2.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-20T19:08:58.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\TestProject2\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "TestProject2\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\TestProject2\\UnitTest1.cs",
+              "RelativeToolTip": "TestProject2\\UnitTest1.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAiwLUAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T19:08:40.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Program.cs",
+              "RelativeDocumentMoniker": "DataConverterApp\\Program.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Program.cs",
+              "RelativeToolTip": "DataConverterApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:32:25.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormatFactory.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Models\\FormatFactory.cs",
+              "RelativeDocumentMoniker": "DataConverterApp\\Models\\FormatFactory.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Models\\FormatFactory.cs",
+              "RelativeToolTip": "DataConverterApp\\Models\\FormatFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:25:27.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConversionService.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Services\\ConversionService.cs",
+              "RelativeDocumentMoniker": "DataConverterApp\\Services\\ConversionService.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Services\\ConversionService.cs",
+              "RelativeToolTip": "DataConverterApp\\Services\\ConversionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T17:22:01.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "DataConverterApp\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "DataConverterApp\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAowCIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-19T16:27:20.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HistoryService.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Services\\HistoryService.cs",
+              "RelativeDocumentMoniker": "DataConverterApp\\Services\\HistoryService.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Services\\HistoryService.cs",
+              "RelativeToolTip": "DataConverterApp\\Services\\HistoryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T15:24:56.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "DataConverterApp\\Pages\\Index.razor",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Pages\\Index.razor",
+              "RelativeToolTip": "DataConverterApp\\Pages\\Index.razor",
+              "ViewState": "AgIAAJoBAAAAAAAAAAAAALQBAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-19T15:01:15.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IDataFormat.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Interfaces\\IDataFormat.cs",
+              "RelativeDocumentMoniker": "DataConverterApp\\Interfaces\\IDataFormat.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Interfaces\\IDataFormat.cs",
+              "RelativeToolTip": "DataConverterApp\\Interfaces\\IDataFormat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T14:52:04.886Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JsonFormat.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Models\\JsonFormat.cs",
+              "RelativeDocumentMoniker": "DataConverterApp\\Models\\JsonFormat.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Models\\JsonFormat.cs",
+              "RelativeToolTip": "DataConverterApp\\Models\\JsonFormat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T14:46:27.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "XmlFormat.cs",
+              "DocumentMoniker": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Models\\XmlFormat.cs",
+              "RelativeDocumentMoniker": "DataConverterApp\\Models\\XmlFormat.cs",
+              "ToolTip": "C:\\Users\\arsen\\OneDrive\\\u0420\u043E\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u0456\u043B\\\u041D\u043E\u0432\u0430 \u043F\u0430\u043F\u043A\u0430 (9)\\DataConverterApp\\Models\\XmlFormat.cs",
+              "RelativeToolTip": "DataConverterApp\\Models\\XmlFormat.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-19T14:46:05.666Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
